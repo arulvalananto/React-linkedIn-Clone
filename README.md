@@ -1,4 +1,4 @@
-LINKEDIN-CLONE
+LinkedIN-Clone
 
 Demo:  https://linkedin-duplicate.web.app/
 
