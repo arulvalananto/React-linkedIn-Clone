@@ -1,0 +1,14 @@
+.headerOption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0.8rem;
+    color: gray;
+}
+.headerOption:hover {
+    color: black;
+}
+.headerOption__title {
+    font-weight: 400;
+    font-size: 14px;
+}

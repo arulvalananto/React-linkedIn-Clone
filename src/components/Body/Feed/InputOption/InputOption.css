@@ -1,0 +1,14 @@
+.inputOption {
+    display: flex;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+.inputOption:hover {
+    background: #EBEBEB;
+}
+.inputOption__title {
+    margin-left: 0.3rem;
+    color: gray;
+    font-weight: 500;
+}

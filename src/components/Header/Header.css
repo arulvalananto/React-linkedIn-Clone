@@ -1,0 +1,53 @@
+.header,
+.header__left,
+.header__right,
+.header__searchBox {
+   display: flex;
+   align-items: center;
+}
+.header {
+   justify-content: space-around;
+   padding: 0.4rem 0;
+   border-bottom: 1px solid lightgray;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   z-index: 99;
+   position: sticky;
+   top: 0;
+   left: 0;
+   background: #fff;
+}
+.header__logo {
+   width: 2rem;
+   object-fit: contain;
+}
+.header__searchBox,
+.header__search {
+   background: #eef3f8;
+}
+.header__searchBox {
+   padding: 0.5rem 2rem;
+   padding-left: 1rem;
+   margin-left: 1rem;
+   border-radius: 3px;
+}
+.header__search {
+   border: none;
+   outline: none;
+   padding-left: 0.3rem;
+}
+.header__avatar {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.header__avatar > .MuiAvatar-root {
+   width: 25px;
+   height: 25px;
+   background: #0a66c2;
+}
+.header__avatarTitle {
+   font-weight: 400;
+   font-size: 14px;
+   color: gray;
+   margin-top: 1px;
+}

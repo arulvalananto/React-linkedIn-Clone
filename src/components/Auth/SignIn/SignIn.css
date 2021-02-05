@@ -1,0 +1,92 @@
+.signIn {
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   background-color: #fafafa;
+}
+.signIn__logo {
+   width: 5rem;
+   object-fit: contain;
+   margin-bottom: 1.5rem;
+}
+.signIn__container {
+   padding: 2rem;
+   padding-bottom: 1rem;
+   box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+   border-radius: 0.5rem;
+   width: 350px;
+}
+.signIn__title {
+   font-size: 32px;
+   font-weight: 500;
+}
+.signIn__subtitle {
+   font-size: 14px;
+}
+.signIn__form {
+   margin: 1rem 0;
+}
+.signIn__email,
+.signIn__password {
+   padding: 1rem;
+   font-size: 16px;
+   width: 90%;
+   margin-top: 1rem;
+   margin-bottom: 0.5rem;
+   border-radius: 5px;
+   border: 2px solid gray;
+}
+.signIn__email:focus,
+.signIn__password:focus {
+  border: 2px solid #0a66c2;
+  outline: #0a66c2;
+}
+.signIn__errorInput {
+   border: 2px solid red;
+   outline: red;
+}
+.signIn__passwordContainer {
+   position: relative;
+}
+.signIn__password {
+   width: 78%;
+   padding-right: 3.5rem;
+}
+.signIn__showPassword {
+   position: absolute;
+   top: 2rem;
+   right: 0.8rem;
+   color: #0a66c2;
+   font-weight: 500;
+}
+.signIn__error {
+   color: red;
+   font-size: 14px;
+}
+.signIn__button {
+   background: #0a66c2;
+   color: #ffff;
+   width: 100%;
+   margin-top: 1rem;
+   border: none;
+   border-radius: 25px;
+   padding: 1rem;
+   font-weight: 500;
+   font-size: 16px;
+}
+.signIn__link {
+   margin-top: 3rem;
+}
+.signIn__link > span {
+   color: #0a66c2;
+   font-weight: 600;
+   padding: 0.5rem;
+   border-radius: 25px;
+}
+.signIn__link > span:hover {
+   cursor: pointer;
+   background: #0a66c260;
+   text-decoration: underline;
+}

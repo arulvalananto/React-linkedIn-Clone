@@ -1,0 +1,47 @@
+.feed {
+    flex: 0.35;
+}
+.feed__top {
+    background: #fff;
+    padding: 1rem;
+    padding-bottom: 0.5rem;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+}
+.feed__inputBox {
+    padding: 0.7rem 1rem;
+    display: flex;
+    align-items: center;
+    border: 1px solid lightgray;
+    border-radius: 50px;
+}
+.feed__form {
+    width: 100%;
+    display: flex;
+}
+.feed__input {
+    border: none;
+    outline: none;
+    margin-left: 1rem;
+    flex: 1;
+}
+.feed__inputBox button {
+    display: none;
+}
+.feed__input::placeholder {
+    font-weight: 600;
+    font-size: 14px;
+}
+.feed__inputBox > .MuiSvgIcon-root {
+    color: gray;
+}
+.feed__inputType {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 0.5rem;
+}
+@media(max-width: 770px) {
+    .feed {
+        flex: 0.8;
+    }
+}

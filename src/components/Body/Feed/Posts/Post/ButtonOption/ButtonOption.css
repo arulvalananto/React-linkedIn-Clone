@@ -1,0 +1,14 @@
+.buttonOption {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-right: 1rem;
+    color: gray;
+}
+.buttonOption:hover {
+    background: #EBEBEB;
+}
+.buttonOption__title {
+    margin-left: 0.5rem;
+}

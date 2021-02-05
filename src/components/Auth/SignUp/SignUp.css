@@ -1,0 +1,77 @@
+.signUp {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   background: #f3f2ef;
+   height: 100vh;
+}
+.signUp__logo {
+   width: 5rem;
+   object-fit: contain;
+   margin-bottom: 1.5rem;
+}
+.signUp__title {
+   font-weight: 400;
+}
+.signUp__wrapper {
+   margin-top: 1rem;
+   background: #fff;
+   padding: 1.5rem;
+   border-radius: 10px;
+   width: 350px;
+}
+.signUp__inputContainer {
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 0.5rem;
+}
+.signUp__inputContainer > label {
+   color: gray;
+   font-size: 14px;
+   margin-bottom: 0.2rem;
+}
+.signUp__input {
+   padding: 0.5rem;
+   border-radius: 5px;
+   border: 1px solid gray;
+}
+.signUp__errorInput {
+    border: 1px solid red;
+    outline: red;
+ }
+.signUp__terms {
+   font-size: 12px;
+   color: gray;
+   text-align: center;
+   margin-top: 0.5rem;
+}
+.signUp__button {
+   background: #0a66c2;
+   color: #ffff;
+   width: 100%;
+   margin-top: 1rem;
+   border: none;
+   border-radius: 25px;
+   padding: 1rem;
+   font-weight: 500;
+   font-size: 16px;
+}
+.signUp__error {
+   color:#D11124;
+   font-size: 14px;
+}
+.signUp__link {
+    margin-top: 1rem;
+    text-align: center;
+ }
+ .signUp__link > span {
+    color: #0a66c2;
+    font-weight: 600;
+    padding: 0.5rem;
+    border-radius: 25px;
+ }
+ .signUp__link > span:hover {
+    cursor: pointer;
+    text-decoration: underline;
+ }

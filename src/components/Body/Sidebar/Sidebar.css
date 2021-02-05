@@ -1,0 +1,116 @@
+.sidebar {
+   flex: 0.15;
+   position: sticky;
+   top: 5rem;
+   left: 5rem;
+   height: 100%;
+}
+.sidebar__top,
+.sidebar__bottom {
+   background-color: white;
+   border: 1px solid lightgray;
+   border-radius: 10px;
+}
+.sidebar__bottom {
+   margin: 1rem 0;
+   padding-bottom: 0.2rem;
+}
+.sidebar__profile {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-bottom: 1rem;
+   border-bottom: 1px solid lightgray;
+}
+.sidebar__profileCover {
+   width: 100%;
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
+}
+
+.sidebar__profile > .MuiAvatar-root {
+   border: 2px solid #fff;
+   width: 2.7rem;
+   height: 2.7rem;
+   object-fit: contain;
+   background: #0a66c2;
+   margin-top: -1rem;
+}
+
+.sidebar__stats {
+   padding: 0.5rem 0;
+   border-bottom: 1px solid lightgray;
+}
+.sidebar__stat {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 0.5rem;
+}
+.sidebar__profileView {
+   font-size: 12px;
+   font-weight: 500;
+}
+.sidebar__profileViewCount {
+   color: #0a66c2;
+   font-size: 12px;
+}
+.sidebar__items {
+   color: gray;
+   display: flex;
+   padding: 0.5rem;
+}
+.sidebar__items > h5 {
+   font-weight: 500;
+   color: #000;
+   margin-left: 0.2rem;
+}
+.sidebar__recent {
+   padding: 0.5rem;
+}
+.sidebar__recentTitle {
+   margin-bottom: 0.5rem;
+}
+.sidebar__hashTags {
+   display: flex;
+   align-items: center;
+   padding: 0.3rem;
+}
+.sidebar__hashTag {
+   margin-left: 0.3rem;
+   padding: 0.2rem 0;
+   font-weight: 500;
+   color: gray;
+}
+.sidebar__hashTags:hover {
+   background: lightgray;
+   color: #000;
+   border-radius: 5px;
+}
+.sidebar__hashTags:hover .sidebar__hashTag {
+   color: #000;
+}
+.sidebar__group,
+.sidebar__event {
+   margin: 0 0.5rem;
+}
+.sidebar__group > p,
+.sidebar__event > p {
+   color: #0a66c2;
+   font-size: 14px;
+   font-weight: 500;
+}
+.sidebar__group > p:hover,
+.sidebar__event > p:hover {
+   text-decoration: underline;
+}
+.sidebar__event {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+@media(max-width: 770px) {
+   .sidebar {
+      display: none;
+   }
+}
