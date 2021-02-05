@@ -1,3 +1,5 @@
+LINKEDIN-CLONE
+
 Demo:  https://linkedin-duplicate.web.app/
 
 This project is a simpler version of LinkedIn. It was created with React, Firebase and etc., It uses News Catcher API to search for news details.
@@ -5,7 +7,7 @@ Tools Used:
 Redux & React
 Firebase
 Flexbox
-Media Quires
+Media Queries
 React-flip-move
 MaterialUI
 Newscatchers API
