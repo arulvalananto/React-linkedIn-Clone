@@ -7,7 +7,7 @@ import { Add, Bookmark } from "@material-ui/icons";
 
 //Redux
 import { useSelector } from "react-redux";
-import { selectUser } from "../../../features/user/userSlice";
+import { selectUser } from "../../../../features/user/userSlice";
 
 const Sidebar = () => {
    const hashTags = [

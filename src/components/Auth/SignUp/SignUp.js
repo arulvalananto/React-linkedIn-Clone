@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./SignUp.css";
-
-//Redux
-import { useDispatch } from "react-redux";
-import { login } from "../../../features/user/userSlice";
 
 //Firebase
 import { auth } from "../../../firebase";
 
-const SignUp = ({ isSignIn }) => {
+//React-Router
+import { Link, Redirect } from "react-router-dom";
+
+//React-Redux
+import { useDispatch, useSelector } from "react-redux";
+import { login, selectUser } from "../../../features/user/userSlice";
+
+const SignUp = () => {
    const initialState = {
       email: "",
       password: "",
@@ -24,7 +27,13 @@ const SignUp = ({ isSignIn }) => {
 
    const [credentials, setCredentials] = useState(initialState);
    const [error, setError] = useState(errorState);
+   const user = useSelector(selectUser);
    const dispatch = useDispatch();
+   const fullNameRef = useRef();
+
+   useEffect(() => {
+      fullNameRef.current.focus();
+   }, []);
 
    const validate = () => {
       let emailError = "";
@@ -105,10 +114,10 @@ const SignUp = ({ isSignIn }) => {
       });
    };
 
-   return (
+   return !user ? (
       <div className="signUp">
          <img
-            src="LinkedIn.png"
+            src="LinkedIn-Logo.png"
             alt="LinkedIn Logo"
             className="signUp__logo"
          />
@@ -124,6 +133,7 @@ const SignUp = ({ isSignIn }) => {
                         error.fullName && "signUp__errorInput"
                      }`}
                      type="text"
+                     ref={fullNameRef}
                      onChange={changeHandler}
                      name="fullName"
                      value={credentials.fullName}
@@ -178,10 +188,12 @@ const SignUp = ({ isSignIn }) => {
                </button>
             </form>
             <p className="signUp__link">
-               Already on LinkedIn? <span onClick={isSignIn}>Sign in</span>
+               Already on LinkedIn? <Link to="/signin">Sign in</Link>
             </p>
          </div>
       </div>
+   ) : (
+      <Redirect to="/" />
    );
 };
 

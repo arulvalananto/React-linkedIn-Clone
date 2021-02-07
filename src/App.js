@@ -1,37 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 
 //Components
-import Header from "./components/Header/Header";
-import Body from "./components/Body/Body";
-import Auth from "./components/Auth/Auth";
-import Upload from "./components/Body/Upload/Upload";
+import SignIn from "./components/Auth/SignIn/SignIn";
+import SignUp from "./components/Auth/SignUp/SignUp";
+import Home from "./components/Home/Home";
+import PageNotFound from "./components/PageNotFound/PageNotFound";
+import ForgotPassword from "./components/Auth/ForgotPassword/ForgotPassword";
 
 //Redux
-import {
-   login,
-   logout,
-   selectIsUpload,
-   selectUser,
-} from "./features/user/userSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { login, logout } from "./features/user/userSlice";
+import { useDispatch } from "react-redux";
 
 //Firebase
 import { auth } from "./firebase";
 
-//MaterialUI
-import { Flare } from "@material-ui/icons";
+//React-Router
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function App() {
-   const user = useSelector(selectUser);
-   const isUpload = useSelector(selectIsUpload);
    const dispatch = useDispatch();
-   const [isDark, setIsDark] = useState(false);
-
-   const toggleDarkMode = () => {
-      console.log("button clicked");
-      setIsDark((prevState) => !prevState);
-   };
 
    const userAuthChecker = () => {
       return auth.onAuthStateChanged((userAuth) => {
@@ -52,17 +40,26 @@ function App() {
 
    useEffect(userAuthChecker, [dispatch]);
 
-   return user ? (
-      <div className={`app  ${isDark && 'dark__mode'}`}>
-         <button title="Change Mode" onClick={toggleDarkMode} className="app__button">
-            <Flare />
-         </button>
-         <Header />
-         <Body />
-         {isUpload && <Upload />}
-      </div>
-   ) : (
-      <Auth />
+   return (
+      <BrowserRouter>
+         <Switch>
+            <Route path="/forgot-password">
+               <ForgotPassword />
+            </Route>
+            <Route path="/signup">
+               <SignUp />
+            </Route>
+            <Route path="/signin">
+               <SignIn />
+            </Route>
+            <Route path="/" exact>
+               <Home />
+            </Route>
+            <Route path="*">
+               <PageNotFound />
+            </Route>
+         </Switch>
+      </BrowserRouter>
    );
 }
 

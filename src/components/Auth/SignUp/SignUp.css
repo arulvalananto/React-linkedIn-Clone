@@ -7,7 +7,7 @@
    height: 100vh;
 }
 .signUp__logo {
-   width: 5rem;
+   width: 10rem;
    object-fit: contain;
    margin-bottom: 1.5rem;
 }
@@ -65,13 +65,10 @@
     margin-top: 1rem;
     text-align: center;
  }
- .signUp__link > span {
+ .signUp__link > a {
     color: #0a66c2;
     font-weight: 600;
     padding: 0.5rem;
     border-radius: 25px;
  }
- .signUp__link > span:hover {
-    cursor: pointer;
-    text-decoration: underline;
- }
+ 

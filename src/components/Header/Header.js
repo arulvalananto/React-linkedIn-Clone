@@ -22,14 +22,18 @@ import { useSelector } from "react-redux";
 //Firebase
 import { auth } from "../../firebase";
 
+//React-Router
+import { useHistory } from "react-router-dom";
+
 const Header = () => {
    const user = useSelector(selectUser);
+   const history = useHistory();
 
-   useEffect(() => {
-   }, [user])
+   useEffect(() => {}, [user]);
 
    const logoutUser = () => {
       auth.signOut();
+      history.replace("/signin")
    };
    return (
       <div className="header">
@@ -55,8 +59,10 @@ const Header = () => {
             <HeaderOption title="Messaging" Icon={Sms} />
             <HeaderOption title="Notifications" Icon={Notifications} />
             <div className="header__avatar" onClick={logoutUser}>
-               <Avatar src={user?.photoUrl}>{user?.email[0]?.toUpperCase()}</Avatar>
-               <h4 className="header__avatarTitle">Me</h4>
+               <Avatar src={user?.photoUrl}>
+                  {user?.email[0]?.toUpperCase()}
+               </Avatar>
+               <h4 className="header__avatarTitle">Logout</h4>
             </div>
          </div>
       </div>

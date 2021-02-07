@@ -9,12 +9,12 @@ import InputOption from "./InputOption/InputOption";
 import Posts from "./Posts/Posts";
 
 //firebase
-import { db } from "../../../firebase";
+import { db } from "../../../../firebase";
 import firebase from "firebase";
 
 //Redux
 import { useDispatch, useSelector } from "react-redux";
-import { selectUser, toggleUpload } from "../../../features/user/userSlice";
+import { selectUser, toggleUpload } from "../../../../features/user/userSlice";
 
 const Feed = () => {
    const [posts, setPosts] = useState([]);

@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./SignIn.css";
 
 //Redux
-import { useDispatch } from "react-redux";
-import { login } from "../../../features/user/userSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { login, selectUser } from "../../../features/user/userSlice";
 
 //Firebase
 import { auth } from "../../../firebase";
 
-const SignIn = ({ isSignIn }) => {
+//React-Router
+import { Link, Redirect, useHistory } from "react-router-dom";
+import { useRef } from "react";
+
+const SignIn = () => {
    const initialState = {
       email: "",
       password: "",
@@ -22,6 +26,13 @@ const SignIn = ({ isSignIn }) => {
    const [error, setError] = useState(errorState);
    const [showPassword, setShowPassword] = useState(false);
    const dispatch = useDispatch();
+   const history = useHistory();
+   const user = useSelector(selectUser);
+   const emailRef = useRef();
+
+   useEffect(() => {
+      emailRef.current.focus();
+   }, []);
 
    const validate = () => {
       let emailError = "";
@@ -71,6 +82,9 @@ const SignIn = ({ isSignIn }) => {
                   })
                );
             })
+            .then(() => {
+               history.push("/");
+            })
             .catch((error) => alert(error.message));
       }
    };
@@ -87,10 +101,10 @@ const SignIn = ({ isSignIn }) => {
       setShowPassword((prevState) => !prevState);
    };
 
-   return (
+   return !user ? (
       <div className="signIn">
          <img
-            src="LinkedIn.png"
+            src="LinkedIn-Logo.png"
             alt="LinkedIn Logo"
             className="signIn__logo"
          />
@@ -103,6 +117,7 @@ const SignIn = ({ isSignIn }) => {
                <input
                   name="email"
                   type="email"
+                  ref={emailRef}
                   placeholder="Enter Email"
                   value={credentials.email}
                   onChange={changeHandler}
@@ -130,8 +145,10 @@ const SignIn = ({ isSignIn }) => {
                      {showPassword ? "Hide" : "Show"}
                   </div>
                </div>
-
                <div className="signIn__error">{error.password}</div>
+               <Link to="/forgot-password" className="signin__forgot">
+                  Forgot password?
+               </Link>
                <button className="signIn__button" onClick={handleSubmit}>
                   Sign in
                </button>
@@ -139,10 +156,12 @@ const SignIn = ({ isSignIn }) => {
          </div>
          <div className="signIn__bottom">
             <p className="signIn__link">
-               New to LinkedIn? <span onClick={isSignIn}>Join now</span>
+               New to LinkedIn? <Link to="/signup">Join now</Link>
             </p>
          </div>
       </div>
+   ) : (
+      <Redirect to="/" />
    );
 };
 
