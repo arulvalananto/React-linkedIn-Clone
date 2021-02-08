@@ -51,3 +51,16 @@
    color: gray;
    margin-top: 1px;
 }
+.header__collapseRight {
+   display: none;
+}
+@media (max-width: 800px) {
+   .header__collapseRight {
+      display: block;
+   }
+}
+@media(max-width: 800px) {
+   .header__right {
+      display: none;
+   }
+}

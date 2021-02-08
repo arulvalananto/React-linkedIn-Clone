@@ -1,0 +1,28 @@
+.subHeader {
+   transform: translateY(-300px);
+   display: none;
+   transition: transform 0.3s;
+   background: #fff;
+}
+.subHeader__show {
+   display: block;
+   transform: translateY(0);
+}
+.subHeader__section {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 0.5rem 4rem;
+   background: #fff;
+}
+.subHeader__section > p {
+   justify-self: flex-start;
+   color: gray;
+}
+.subHeader__section > .MuiSvgIcon-root {
+    color: gray;
+}
+.subHeader__section > .MuiAvatar-root {
+    width: 2rem;
+    height: 2rem;
+}

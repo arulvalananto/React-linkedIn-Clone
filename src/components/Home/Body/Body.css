@@ -6,9 +6,15 @@
    background: #f3f2ef;
    height: 100%;
 }
-@media (max-width: 770px) {
+@media (max-width: 800px) {
    .body {
       padding-left: 2rem;
       padding-right: 2rem;
    }
 }
+@media (max-width: 490px) {
+   .body {
+      padding: 0 3rem;
+   }
+}
+

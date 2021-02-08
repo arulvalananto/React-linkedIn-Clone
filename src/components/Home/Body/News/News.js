@@ -23,8 +23,8 @@ const News = () => {
    }, []);
 
    const strLengthCutter = (str) => {
-      if (str.length > 35) {
-         str = str.slice(0, 35) + " ...";
+      if (str.length > 50) {
+         str = str.slice(0, 50) + " ...";
       }
       return str;
    };
